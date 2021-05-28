@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <div id="box"></div>
+    <script>
+        let oBtn = document.querySelector("#btn")
+        let oBox = document.querySelector("#box")
+
+        let getData = () => {
+            return promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    //成功
+                    /* resolve(["sc", 19]) */
+                    //失败
+                    reject("网络错误")
+                }, 1000);
+            })
+        }
+        oBtn.onclick = async function () {
+            try {
+                let re = await getData();
+                console.log(re)
+                let str = `<h1>${re[0]}</h1><h3>${re[1]}</h3>`
+                oBox.innerHTML = str;
+            }catch(e){
+                let str = `<h1>${e}</h1>`
+                oBox.innerHTML = str;
+            }
+        }
+    </script>
+</body>
+
+</html>

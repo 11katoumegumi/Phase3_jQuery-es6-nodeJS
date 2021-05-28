@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li{
+            border: 1px solid black;
+            width: 300px;
+            background-color: skyblue;
+        }
+        ul li div{
+            height: 300px;
+            background-color: white;
+            display: none;
+        }
+        ul li div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>ゆあんす1<div></div></li>
+        <li>ゆあんす2<div></div></li>
+        <li>ゆあんす3<div></div></li>
+        <li>ゆあんす4<div></div></li>
+    </ul>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $("ul li").click(function(){
+            $(this).find("div").toggleClass("active").parent().siblings().find("div").removeClass("active");
+        })
+    </script>
+</body>
+</html>

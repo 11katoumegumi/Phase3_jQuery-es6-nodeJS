@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        //复制数组
+        let arr = [1, 2, 3];
+        let otharr = [4, 5, 6, 7]
+        let arr1 = [...arr];
+        let newArr = [...arr, ...otharr];
+        //字符串转化为数组
+        let arr5 = [..."hello"];
+        console.log(arr5);
+
+        arr.flat() //用于拉平数组，可以传入参数为拉平次数
+        //如果不知道自己的数组有多少层  那么可以传递infinity 代表无穷大
+           let arr4 = [1, false, {}, 'd', 'e']
+           let result = arr4.find(function (item, index, arr) {
+             console.log(item, index, arr)
+             return typeof item == 'string'
+           })
+           console.log(result)
+    </script>
+</body>
+
+</html>

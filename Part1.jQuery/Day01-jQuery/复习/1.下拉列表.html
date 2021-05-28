@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer {
+            display: flex;
+            width: 300px;
+            padding: 0;
+            margin: 200px auto;
+            list-style-type: none;
+            
+        }
+
+        #outer>li {
+
+            width: 100px;
+            border: 1px solid salmon;
+            height: 50px;
+            line-height: 50px;
+            background-color: skyblue;
+            text-align: center;
+        }
+
+        #inner {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            
+        }
+        #inner li{
+            text-align: center;
+            width: 100px;
+            border: 1px solid silver;
+            height: 30px;
+            line-height: 30px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="outer">
+        <li>菜单1
+            <ul id="inner">
+                <li>子菜单1</li>
+                <li>子菜单2</li>
+                <li>子菜单3</li>
+            </ul>
+        </li>
+        <li>菜单2<ul id="inner">
+                <li>子菜单1</li>
+                <li>子菜单2</li>
+                <li>子菜单3</li>
+            </ul>
+        </li>
+        <li>菜单3<ul id="inner">
+                <li>子菜单1</li>
+                <li>子菜单2</li>
+                <li>子菜单3</li>
+            </ul>
+        </li>
+    </ul>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+        $("#outer li").mouseenter(function(){
+            $(this).find("#inner").css("display","flex")
+        })
+        $("#outer li").mouseleave(function(){
+            $(this).find("#inner").css("display","none")
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* js的对象，本质上是键值对的集合(hash结构)，但是传统上只能用用字符串当做键 */
+        /* Map，类似对象，也是键值对的集合，但是键不限于字符串，各种类型的值（包括对象）都可以当做键。
+           也就是说，Object结构提供了"字符串-值"的对应，Map结构提供了"值-值"对应，是一种更完善的Hash结构实现,
+        */
+        //总结：为什么会有Map，因为对象属性名称必须是字符串，如果是其他类型则不行
+        //[object,object]问题
+        let p1 = {
+            name: "lily"
+        }
+        let obj1 = {
+            id: 1,
+            [p1]: "good"
+        }
+        console.log(obj1); //[object,Object]
+
+
+        let mp = new Map([
+            ["a", 1],
+            ["b", 2],
+        ])
+        console.log(mp)
+
+
+        let p2 = {
+            name: "lily"
+        };
+        let mp2 = new Map([
+            ["a", 1],
+            [p2, 2],
+        ])
+        console.log(mp2)
+
+        //方法
+        //size
+        console.log(mp2.size)
+        //`get`方法读取`key`对应的键值，如果找不到`key`，返回`undefined`。
+        console.log(mp2.get(p2));
+        //`has`方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
+        /* 
+         `has`方法返回一个布尔值，表示某个键是否在当前 Map 对象之中。
+        `delete`方法删除某个键，返回`true`。如果删除失败，返回`false`。
+         `clear`方法清除所有成员，没有返回值。
+         `keys()`：返回键名的遍历器。
+         `values()`：返回键值的遍历器。
+         `entries()`：返回所有成员的遍历器。
+         `forEach()`：遍历 Map 的所有成员。 */
+    </script>
+</body>
+
+</html>

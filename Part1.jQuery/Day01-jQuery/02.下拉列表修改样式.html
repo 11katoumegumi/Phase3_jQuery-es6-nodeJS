@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 40px;
+            margin: 200px auto;
+            border: 1px solid salmon;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            display: flex;
+        }
+        li>a{
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            /* height: 40px; */
+            line-height: 40px;
+            color: skyblue;
+            text-decoration: none;
+            background-color: salmon;
+            border: 1px solid skyblue;
+        }
+        .son{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            display: none;
+        }
+        .son li{
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li><a href="">菜单1</a>
+                <ul class="son">
+                    <li>子菜单1</li>
+                    <li>子菜单2</li>
+                    <li>子菜单3</li>
+                </ul>
+            </li>
+            <li><a href="">菜单2</a>
+                <ul class="son">
+                    <li>子菜单1</li>
+                    <li>子菜单2</li>
+                    <li>子菜单3</li>
+                </ul>
+            </li>
+            <li><a href="">菜单2</a>
+                <ul class="son">
+                    <li>子菜单1</li>
+                    <li>子菜单2</li>
+                    <li>子菜单3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        //获取元素
+        $("#box>ul>li").on("mouseenter",function(){
+            $(this).find(".son").css("display","flex")
+        })
+
+        $("#box>ul>li").on("mouseleave",function(){
+            $(this).find(".son").css("display","none")
+        })
+    </script>
+</body>
+
+</html>

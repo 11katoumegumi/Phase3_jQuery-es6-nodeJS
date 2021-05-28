@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            set是es6中新加的一个种数据类型，类似数组，但成员是不可重复的，一般用来去重，Set本身是一个构造函数,用来生成set数据结构，Set函数可以接受一个数组(或者具有构造器接口的其他数据结构)作为参数用来初始化。
+        */
+
+        let newSet=new Set([1,2,3,4,5,6,6,6,6,6,2,3,1,]);
+        console.log(newSet);
+        //利用set给数组去重
+        let arr=[1,3,5,4,7,69551,3,21,4,5,4,1,3,2,6,9,47,4,1,2,3,5,1,3,5,47,1,2,35];
+        let newArr=[...new Set(arr)];
+        console.log(newArr);
+        //用set给字符串去重
+        let newStr=[...new Set("hello")].join("")
+        console.log(newStr)
+
+        //size
+        console.log(newSet.size);
+
+        //add
+
+        newSet.add(77)
+        newSet.add(66)
+        newSet.add(55);
+        console.log(newSet);
+
+        //delete
+
+        newSet.delete(1);
+        console.log(newSet);
+
+        //has
+        console.log(newSet.has(1))
+        console.log(newSet.has(2))
+        console.log(newSet.has(3))
+
+        //clear
+        //newSet.clear
+
+        //.keys() .values()获取所有的键和值
+        //entries()获取键值对
+        //forEach()
+    </script>
+</body>
+</html>

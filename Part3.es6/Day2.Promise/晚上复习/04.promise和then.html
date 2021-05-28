@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise=new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                console.log(promise)
+                resolve(114514);
+               /*  reject("11515") */
+            }, 1000);
+        })
+        /* promise.then((e)=>{
+            console.log("成功" +e)
+        },(e)=>{
+            console.log("失败" +e)
+        }) */
+        let promise2=promise.then(()=>{});
+        console.log(promise2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise=new Promise((resove,reject)=>{
+            console.log("promise里的东西执行了")
+            setTimeout(() => {
+                console.log("定时器里的函数");
+                resove()
+            }, 4000);
+            console.log("定时器下面的函数")
+            
+        })
+        console.log(promise);
+    </script>
+</body>
+</html>

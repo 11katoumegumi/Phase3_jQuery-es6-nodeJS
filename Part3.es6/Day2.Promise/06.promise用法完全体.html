@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">下载</button>
+    <div id="box"></div>
+    <script>
+        let oBtn = document.querySelector("#btn")
+        let oBox = document.querySelector("#box")
+        let getData = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    /* resolve(["zs",17]) */
+                    reject("网络错误")
+                }, 1000);
+            })
+        }
+        oBtn.onclick = async function () {
+            try {
+
+                let data = await getData();
+                str = `<h1>${data[0]}</h1><h3>${data[1]}</h3>`
+                oBox.innerHTML = str;
+
+
+            } catch (e) {
+                console.log("cuowule")
+                str = `<h1>${e}</h1>`
+                oBox.innerHTML = str;
+            }
+        }
+    </script>
+</body>
+
+</html>
